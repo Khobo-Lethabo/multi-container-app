@@ -21,10 +21,12 @@ services:
 
   todo-database:
     image: mongo:6
-    #volumes: 
-    #  - database:/data/db
+    volumes: 
+     - database:/data/db #This line allows for 
+      # if you delete the container the data will be persisted when you you download
     ports:
       - 27017:27017
 
-#volumes:
-  #database:
+volumes:
+  database: #This line allows for 
+      # if you delete the container the data will be persisted when you you download
